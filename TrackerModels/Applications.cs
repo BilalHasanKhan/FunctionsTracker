@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrackerModels
 {
-    class Applications
+   public class Applications
     {
         public int ApplicationId { get; set; }
         public string ApplicationName { get; set; }
