@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 
 
-namespace TrackerModels
+namespace TrackerModels.Models
 {
     public class ACR
     {

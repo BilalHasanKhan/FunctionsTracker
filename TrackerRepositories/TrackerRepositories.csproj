@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E3311237-5FB5-4950-9C8C-F19F18B57B05}</ProjectGuid>
+    <ProjectGuid>{EBDA147F-30E1-4391-AA00-9FB3438BB031}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TrackerModels</RootNamespace>
-    <AssemblyName>TrackerModels</AssemblyName>
+    <RootNamespace>TrackerRepositories</RootNamespace>
+    <AssemblyName>TrackerRepositories</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -35,8 +35,6 @@
       <HintPath>..\packages\EntityFramework.5.0.0-rc\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.Composition" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
@@ -46,28 +44,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\ACR.cs" />
-    <Compile Include="Models\Applications.cs" />
-    <Compile Include="Models\AssetDetails.cs" />
-    <Compile Include="Models\DocumentAttachment.cs" />
-    <Compile Include="Models\IncidentRequestMapping.cs" />
-    <Compile Include="Models\OrgDetails.cs" />
-    <Compile Include="Models\SoftwareDetails.cs" />
-    <Compile Include="Models\StakeHoldersDetails.cs" />
-    <Compile Include="Models\URLDetails.cs" />
+    <Compile Include="Interfaces\IApplicationRepository.cs" />
+    <Compile Include="Interfaces\IIncidentRequestMapping.cs" />
+    <Compile Include="Interfaces\IServerDetailsRepository.cs" />
+    <Compile Include="Interfaces\IServerIPMappingRepsository.cs" />
+    <Compile Include="Interfaces\IStakeHolderMappingRepository.cs" />
+    <Compile Include="Interfaces\IStakeHolderRepository.cs" />
+    <Compile Include="Interfaces\IStatusMasterRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\RFC.cs" />
-    <Compile Include="Context\TrackerContext.cs" />
-    <Compile Include="Models\ServerDetails.cs" />
-    <Compile Include="Models\ServerIPMapping.cs" />
-    <Compile Include="Models\StakeHolderMapping.cs" />
-    <Compile Include="Models\StakeHolderMaster.cs" />
-    <Compile Include="Models\StatusMaster.cs" />
-    <Compile Include="Models\Users.cs" />
+    <Compile Include="Repositories\ApplicationsRepository.cs" />
+    <Compile Include="Repositories\AttachmentRepository.cs" />
+    <Compile Include="Interfaces\IAttachmentRepository.cs" />
+    <Compile Include="Interfaces\IRFCRepository.cs" />
+    <Compile Include="Repositories\IncidentMappingRepository.cs" />
+    <Compile Include="Repositories\RFCRepository.cs" />
+    <Compile Include="Repositories\ServerDetailsRepositiories.cs" />
+    <Compile Include="Repositories\ServerIPMappingRepository.cs" />
+    <Compile Include="Repositories\StakeHolderMappingRepository.cs" />
+    <Compile Include="Repositories\StakeHolderRepository.cs" />
+    <Compile Include="Repositories\StatusRepository.cs" />
+    <Compile Include="Repositories\UsersReporsitory.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\TrackerModels\TrackerModels.csproj">
+      <Project>{E3311237-5FB5-4950-9C8C-F19F18B57B05}</Project>
+      <Name>TrackerModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
