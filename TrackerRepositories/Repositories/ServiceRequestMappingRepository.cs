@@ -50,7 +50,7 @@ namespace TrackerRepositories.Repositories
         public void Delete(int id)
         {
             var SM = _context.ServiceRequestMapping.Find(id);
-            _context.ServiceRequestMapping.Remove(IM);
+            _context.ServiceRequestMapping.Remove(SM);
             
         }
 

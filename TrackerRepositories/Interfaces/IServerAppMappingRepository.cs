@@ -10,7 +10,7 @@ namespace TrackerRepositories.Interfaces
     public interface IServerAppMappingRepository
     {
         IQueryable<ServerAppMapping> All { get; }
-        IQueryable<ServerAppMapping> AllIncluding(params Expression<Func<ACR, object>>[] includeProperties);
+        IQueryable<ServerAppMapping> AllIncluding(params Expression<Func<ServerAppMapping, object>>[] includeProperties);
         ServerAppMapping FindByAppId(int appId);
         List<ServerAppMapping> FindByServerId(int ServerId);
         void InsertOrUpdate(ServerAppMapping serverAppMapping);
