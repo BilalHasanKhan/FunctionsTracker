@@ -44,6 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IServerAppMappingRepository.cs" />
+    <Compile Include="Interfaces\IServiceRequestMapping.cs" />
+    <Compile Include="Interfaces\IACRRepository.cs" />
     <Compile Include="Interfaces\IApplicationRepository.cs" />
     <Compile Include="Interfaces\IIncidentRequestMapping.cs" />
     <Compile Include="Interfaces\IServerDetailsRepository.cs" />
@@ -53,10 +56,13 @@
     <Compile Include="Interfaces\IStatusMasterRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ACRRepository.cs" />
     <Compile Include="Repositories\ApplicationsRepository.cs" />
     <Compile Include="Repositories\AttachmentRepository.cs" />
     <Compile Include="Interfaces\IAttachmentRepository.cs" />
     <Compile Include="Interfaces\IRFCRepository.cs" />
+    <Compile Include="Repositories\ServerAppMappingRepository.cs" />
+    <Compile Include="Repositories\ServiceRequestMappingRepository.cs" />
     <Compile Include="Repositories\IncidentMappingRepository.cs" />
     <Compile Include="Repositories\RFCRepository.cs" />
     <Compile Include="Repositories\ServerDetailsRepositiories.cs" />

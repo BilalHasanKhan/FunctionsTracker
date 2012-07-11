@@ -25,5 +25,8 @@ namespace TrackerModels.Context
         public DbSet<URLDetails> URLDetails { get; set; }
         public DbSet<Users> Users { get; set; }
         public DbSet<IncidentRequestMapping> IncidentRequestMapping { get; set; }
+        public DbSet<ServiceRequestMapping> ServiceRequestMapping { get; set; }
+        public DbSet<ServerAppMapping> ServerAppMapping { get; set; }
+
     }
 }

@@ -6,6 +6,7 @@ using TrackerRepositories.Repositories;
 using TrackerModels.Context;
 using TrackerModels.Models;
 using TrackerRepositories.Interfaces;
+using System.Data;
 
 namespace TrackerRepositories.Repositories
 {
@@ -36,6 +37,43 @@ namespace TrackerRepositories.Repositories
         StakeHolderMapping IStakeHolderMappingRepository.GetByStakeholderID(int ACRID)
         {
             throw new NotImplementedException();
+        }
+
+        #endregion
+
+        #region IStakeHolderMappingRepository Members
+
+        IQueryable<StakeHolderMapping> IStakeHolderMappingRepository.GetAll()
+        {
+            return _context.StakeHolderMapping;
+        }
+
+        void IStakeHolderMappingRepository.InsertOrUpdate(StakeHolderMapping StakeHolderMapping)
+        {
+            if (StakeHolderMapping.MapID == default(int))
+            {                // New entity
+                _context.StakeHolderMapping.Add(StakeHolderMapping);
+            }
+            else
+            {                // Existing entity
+                _context.Entry(StakeHolderMapping).State = EntityState.Modified;
+            }
+        }
+
+        void IStakeHolderMappingRepository.Delete(int id)
+        {
+            var SM = _context.StakeHolderMapping.Find(id);
+            _context.StakeHolderMapping.Remove(SM);
+        }
+
+        void IStakeHolderMappingRepository.Save()
+        {
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception e)
+            { }
         }
 
         #endregion

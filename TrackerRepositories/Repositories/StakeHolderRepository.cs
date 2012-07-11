@@ -3,75 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TrackerModels.Models;
+using TrackerModels.Context;
 using TrackerRepositories.Interfaces;
+using System.Data;
 
 namespace TrackerRepositories.Repositories
 {
     class StakeHolderRepository : IStakeHolderRepository
     {
-        private List<StakeHolderMaster> _StakeHolderMaster = new List<StakeHolderMaster>();
-        private int _nextId = 1;
+        TrackerContext _context = new TrackerContext();
 
-
-        IQueryable<StakeHolderMaster> GetAll()
+        public IQueryable<StakeHolderMaster> All
         {
-            return _StakeHolderMaster.AsQueryable();
+            get { return _context.StakeHolderMaster; }
         }
 
-        StakeHolderMaster Get(int ID)
+       public  StakeHolderMaster GetByID(int ID)
         {
-            return _StakeHolderMaster.Find(c=>c.ID==ID);
+            return _context.StakeHolderMaster.SingleOrDefault(c => c.ID == ID);
         }
 
-        StakeHolderMaster Add(StakeHolderMaster item)
+     
+        public void InsertOrUpdate(StakeHolderMaster StakeHolderMaster)
         {
-            item.ID = _nextId++;
-            _StakeHolderMaster.Add(item);
-            return item;        
-        }
-
-        void IStakeHolderRepository.Remove(int ID)
-        {
-             StakeHolderMaster SHD = _StakeHolderMaster.Find(c => c.ID == ID);
-            _StakeHolderMaster.Remove(SHD);
-        }
-
-        bool Update(StakeHolderMaster item)
-        {
-            
-            int index = _StakeHolderMaster.FindIndex(c=> c.ID == item.ID);
-            if (index == -1)
-            {
-                return false;
+            if (StakeHolderMaster.ID == default(int))
+            {                // New entity
+                _context.StakeHolderMaster.Add(StakeHolderMaster);
             }
-            _StakeHolderMaster.RemoveAt(index);
-            _StakeHolderMaster.Add(item);
-            return true;
-            
+            else
+            {                // Existing entity
+                _context.Entry(StakeHolderMaster).State = EntityState.Modified;
+            }
         }
-
-        #region IStakeHolderRepository Members
-
-        IQueryable<StakeHolderMaster> IStakeHolderRepository.GetAll()
+        public void Delete(int id)
         {
-            throw new NotImplementedException();
+            var SM = _context.StakeHolderMaster.Find(id);
+            _context.StakeHolderMaster.Remove(SM);
         }
 
-        StakeHolderMaster IStakeHolderRepository.Get(int ID)
+       public void Save()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.SaveChanges();
+            }
+            catch (Exception e)
+            { }
         }
 
-        StakeHolderMaster IStakeHolderRepository.Add(StakeHolderMaster item)
-        {
-            throw new NotImplementedException();
-        }
 
-        bool IStakeHolderRepository.Update(StakeHolderMaster item)
-        {
-            throw new NotImplementedException();
-        }
 
-        #endregion
+      
     }
 }

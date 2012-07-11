@@ -52,6 +52,8 @@
     <Compile Include="Models\DocumentAttachment.cs" />
     <Compile Include="Models\IncidentRequestMapping.cs" />
     <Compile Include="Models\OrgDetails.cs" />
+    <Compile Include="Models\ServerAppMapping.cs" />
+    <Compile Include="Models\ServiceRequestMapping.cs" />
     <Compile Include="Models\SoftwareDetails.cs" />
     <Compile Include="Models\StakeHoldersDetails.cs" />
     <Compile Include="Models\URLDetails.cs" />

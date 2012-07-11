@@ -9,10 +9,10 @@ namespace TrackerRepositories.Interfaces
 {
     public interface IStakeHolderRepository
     {
-        IQueryable<StakeHolderMaster> GetAll();
-        StakeHolderMaster Get(int ID);
-        StakeHolderMaster Add(StakeHolderMaster item);
-        void Remove(int ID);
-        bool Update(StakeHolderMaster item);
+        IQueryable<StakeHolderMaster> All { get; }
+        StakeHolderMaster GetByID(int ID);
+        void Save();
+        void Delete(int ID);
+        void InsertOrUpdate(StakeHolderMaster item);
     }
 }
