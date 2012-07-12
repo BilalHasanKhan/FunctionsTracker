@@ -16,6 +16,10 @@ namespace TrackerModels.Models
 
         public int StakeholderID { get; set; }
 
-       
+        [ForeignKey("ACRID")]
+        public virtual ACR ACR { get; set; }
+
+        [ForeignKey("StakeHoldersDetails")]
+        public virtual StakeHoldersDetails StakeHoldersDetails { get; set; }
     }
 }
