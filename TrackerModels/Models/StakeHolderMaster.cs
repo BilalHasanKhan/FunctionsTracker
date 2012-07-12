@@ -11,10 +11,10 @@ namespace TrackerModels.Models
         [Key]
         public int ID{get;set;}
 
-        [MaxLength(30)]
+        [MaxLength(50)]
         public string FirstName { get; set; }
 
-        [MaxLength(30)]
+        [MaxLength(50)]
         public string LastName { get; set; }
 
 
