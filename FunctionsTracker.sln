@@ -5,6 +5,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerModels", "TrackerMod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerRepositories", "TrackerRepositories\TrackerRepositories.csproj", "{EBDA147F-30E1-4391-AA00-9FB3438BB031}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrackerBusiness", "TrackerBusiness\TrackerBusiness.csproj", "{533EF3AE-BEDD-42AD-80C2-821159384EB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tracker.Business.Tests", "Tracker.Business.Tests\Tracker.Business.Tests.csproj", "{7D12BAB6-330E-4854-B596-E223F39505F9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A78E889B-6A8E-4BD7-85B1-26D6B19A14D3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +28,14 @@ Global
 		{EBDA147F-30E1-4391-AA00-9FB3438BB031}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBDA147F-30E1-4391-AA00-9FB3438BB031}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBDA147F-30E1-4391-AA00-9FB3438BB031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{533EF3AE-BEDD-42AD-80C2-821159384EB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{533EF3AE-BEDD-42AD-80C2-821159384EB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{533EF3AE-BEDD-42AD-80C2-821159384EB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{533EF3AE-BEDD-42AD-80C2-821159384EB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D12BAB6-330E-4854-B596-E223F39505F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D12BAB6-330E-4854-B596-E223F39505F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D12BAB6-330E-4854-B596-E223F39505F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D12BAB6-330E-4854-B596-E223F39505F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

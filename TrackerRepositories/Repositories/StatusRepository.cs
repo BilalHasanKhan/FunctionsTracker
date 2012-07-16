@@ -16,7 +16,7 @@ namespace TrackerRepositories
 
         public IQueryable<StatusMaster> All
         {
-            get { return context.StatusMaster; }
+            get { return context.StatusMaster.Where(i => i.IsActive); }
         }
 
 

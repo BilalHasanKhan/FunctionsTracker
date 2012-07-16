@@ -66,6 +66,18 @@ namespace TrackerRepositories.Repositories
            _context.SaveChanges();
         }
 
+        public string GetACRStatus(int acrId)
+        {
+
+            var result = from a in _context.ACR
+                         join b in _context.StatusMaster on a.StatusId equals b.StatusId
+                         where a.ACRID == acrId
+                         select b.StatusName;
+
+            return result.ToString();
+
+        }
+
       
     }
 }
