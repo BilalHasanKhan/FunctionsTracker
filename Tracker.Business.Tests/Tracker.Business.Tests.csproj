@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ACRStatusTests.cs" />
+    <Compile Include="ACRStatusTests\ACRStatusTests.cs" />
+    <Compile Include="ACRStatusTests\CalculateACREndDate.cs" />
+    <Compile Include="FakeDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

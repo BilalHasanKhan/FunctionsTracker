@@ -27,6 +27,8 @@ namespace TrackerModels.Models
 
         public DateTime EndDate { get; set; }
 
+        public double EstimatedEfforts { get; set; }
+
         public int StatusId { get; set; }
 
         public int ModifiedBy { get; set; }

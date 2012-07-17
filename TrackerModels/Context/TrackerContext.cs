@@ -16,6 +16,7 @@ namespace TrackerModels.Context
         public DbSet<DocumentAttachment> DocumentAttachment { get; set; }
         public DbSet<OrgDetails> OrgDetails { get; set; }
         public DbSet<RFC> RFC { get; set; }
+        public DbSet<AssigneeMapping> AssigneeMapping { get; set; }
         public DbSet<ServerDetails> ServerDetails { get; set; }
         public DbSet<ServerIPMapping> ServerIPMappings { get; set; }
         public DbSet<SoftwareDetails> SoftwareDetails { get; set; }
