@@ -49,6 +49,7 @@
     <Compile Include="Models\ACR.cs" />
     <Compile Include="Models\Applications.cs" />
     <Compile Include="Models\AssetDetails.cs" />
+    <Compile Include="Models\AssigneeMapping.cs" />
     <Compile Include="Models\DocumentAttachment.cs" />
     <Compile Include="Models\IncidentRequestMapping.cs" />
     <Compile Include="Models\OrgDetails.cs" />

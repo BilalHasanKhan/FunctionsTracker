@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentDateTime">
+      <HintPath>..\packages\FluentDateTime.1.6.1.0\Lib\NET40\FluentDateTime.dll</HintPath>
+    </Reference>
     <Reference Include="Moq">
       <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
@@ -48,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ACRStatusTests\ACRStatusTests.cs" />
     <Compile Include="ACRStatusTests\CalculateACREndDate.cs" />
+    <Compile Include="ACRLandingPageBusinessTests\ACRLandingPageTests.cs" />
     <Compile Include="FakeDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

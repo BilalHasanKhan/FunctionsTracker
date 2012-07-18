@@ -37,8 +37,6 @@ namespace TrackerModels.Models
 
         public string ApprovedBy { get; set; }
 
-        public int AssigneeMapping { get; set; }
-
         public int CreatedBy { get; set; }
 
         public DateTime CreatedDate { get; set; }
@@ -47,6 +45,12 @@ namespace TrackerModels.Models
 
         [ForeignKey("ApplicationId")]
         public virtual Applications Application { get; set; }
+
+        [ForeignKey("StatusId")]
+        public virtual StatusMaster Status { get; set; }
+
+        
+        public virtual List<AssigneeMapping> AssigneeMappings { get; set; }
 
     }
 }

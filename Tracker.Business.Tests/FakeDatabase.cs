@@ -8,9 +8,7 @@ namespace Tracker.Business.Tests
 {
     public static class FakeDatabase
     {
-        //public static IList<StatusMaster> statusMaster;
-        //public static IList<ACR> acr;
-
+      
         public static List<StatusMaster> StatusList()
         {
 
@@ -30,7 +28,7 @@ namespace Tracker.Business.Tests
 
             };
 
-            //return statusMaster.ToList<StatusMaster>();
+           
 
         }
 
@@ -40,13 +38,27 @@ namespace Tracker.Business.Tests
 
           return new List<ACR>
             {
-                new ACR { ACRID=1,ACR_Name="Dofa_ACR_20",ApplicationId=0,ApprovedBy="None",AssigneeMapping=0,CreatedBy=1,CreatedDate=DateTime.Now,EndDate=DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)),isActive=true,RaisedBy=1,StatusId=2,Summary="This is ACR module test",EstimatedEfforts=10.5}
+                new ACR { ACRID=1,ACR_Name="Dofa_ACR_20",ApplicationId=0,ApprovedBy="None",CreatedBy=1,CreatedDate=DateTime.Now,EndDate=DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)),isActive=true,RaisedBy=1,StatusId=4,Summary="This is ACR module test",EstimatedEfforts=10.5}
 
 
             };
 
             
 
+
+        }
+
+        public static List<AssigneeMapping> GetAssignees()
+        {
+
+            return new List<AssigneeMapping>
+            {
+                new AssigneeMapping {AssigneeMappingId=1,ACRId=1,UserId=1},
+                new AssigneeMapping {AssigneeMappingId=2,ACRId=1,UserId=2},
+                new AssigneeMapping {AssigneeMappingId=3,ACRId=1,UserId=3},
+                new AssigneeMapping {AssigneeMappingId=4,ACRId=1,UserId=4}
+
+            };
 
         }
     }

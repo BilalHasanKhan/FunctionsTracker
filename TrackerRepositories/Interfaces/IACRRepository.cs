@@ -14,6 +14,7 @@ namespace TrackerRepositories.Interfaces
         List<ACR> FindByAppId(int appId);
         ACR FindByACRName(string acrName);
         string GetACRStatus(int acrId);
+        int GetNumberOfAssignees(int ACRId);
         void InsertOrUpdate(ACR application);
         void Delete(int id);
         void Save();

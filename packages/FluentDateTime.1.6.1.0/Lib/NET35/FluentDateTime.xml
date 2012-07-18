@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FluentDateTime</name>
+    </assembly>
+    <members>
+        <member name="T:FluentDateTime.DateTimeExtensions">
+            <summary>
+            Static class containing Fluent <see cref="T:System.DateTime"/> extension methods.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.EndOfDay(System.DateTime)">
+            <summary>
+            Returns the very end of the given day (the last millisecond of the last hour for the given <see cref="T:System.DateTime"/>).
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.BeginningOfDay(System.DateTime)">
+            <summary>
+            Returns the Start of the given day (the first millisecond of the given <see cref="T:System.DateTime"/>).
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.NextYear(System.DateTime)">
+            <summary>
+            Returns the same date (same Day, Month, Hour, Minute, Second etc) in the next calendar year. 
+            If that day does not exist in next year in same month, number of missing days is added to the last day in same month next year.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.PreviousYear(System.DateTime)">
+            <summary>
+            Returns the same date (same Day, Month, Hour, Minute, Second etc) in the previous calendar year.
+            If that day does not exist in previous year in same month, number of missing days is added to the last day in same month previous year.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.NextDay(System.DateTime)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> increased by 24 hours ie Next Day.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.PreviousDay(System.DateTime)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> decreased by 24h period ie Previous Day.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.Next(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Returns first next occurrence of specified <see cref="T:System.DayOfWeek"/>.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.Previous(System.DateTime,System.DayOfWeek)">
+            <summary>
+            Returns first next occurrence of specified <see cref="T:System.DayOfWeek"/>.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.WeekAfter(System.DateTime)">
+            <summary>
+            Increases supplied <see cref="T:System.DateTime"/> for 7 days ie returns the Next Week.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.WeekEarlier(System.DateTime)">
+            <summary>
+            Decreases supplied <see cref="T:System.DateTime"/> for 7 days ie returns the Previous Week.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.IncreaseTime(System.DateTime,System.TimeSpan)">
+            <summary>
+            Increases the <see cref="T:System.DateTime"/> object with given <see cref="T:System.TimeSpan"/> value.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.DecreaseTime(System.DateTime,System.TimeSpan)">
+            <summary>
+            Decreases the <see cref="T:System.DateTime"/> object with given <see cref="T:System.TimeSpan"/> value.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetTime(System.DateTime,System.Int32)">
+            <summary>
+            Returns the original <see cref="T:System.DateTime"/> with Hour part changed to supplied hour parameter.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetTime(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Returns the original <see cref="T:System.DateTime"/> with Hour and Minute parts changed to supplied hour and minute parameters.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetTime(System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the original <see cref="T:System.DateTime"/> with Hour, Minute and Second parts changed to supplied hour, minute and second parameters.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetTime(System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the original <see cref="T:System.DateTime"/> with Hour, Minute, Second and Millisecond parts changed to supplied hour, minute, second and millisecond parameters.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetHour(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Hour part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetMinute(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Minute part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetSecond(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Second part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetMillisecond(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Millisecond part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.Midnight(System.DateTime)">
+            <summary>
+            Returns original <see cref="T:System.DateTime"/> value with time part set to midnight (alias for <see cref="M:FluentDateTime.DateTimeExtensions.BeginningOfDay(System.DateTime)"/> method).
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.Noon(System.DateTime)">
+            <summary>
+            Returns original <see cref="T:System.DateTime"/> value with time part set to Noon (12:00:00h).
+            </summary>
+            <param name="value">The <see cref="T:System.DateTime"/> find Noon for.</param>
+            <returns>A <see cref="T:System.DateTime"/> value with time part set to Noon (12:00:00h).</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetDate(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Year part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetDate(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Year and Month part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetDate(System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Year, Month and Day part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetYear(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Year part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetMonth(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Month part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SetDay(System.DateTime,System.Int32)">
+            <summary>
+            Returns <see cref="T:System.DateTime"/> with changed Day part.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.IsBefore(System.DateTime,System.DateTime)">
+            <summary>
+            Determines whether the specified <see cref="T:System.DateTime"/> is before then current value.
+            </summary>
+            <param name="current">The current value.</param>
+            <param name="toCompareWith">Value to compare with.</param>
+            <returns>
+            	<c>true</c> if the specified current is before; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.IsAfter(System.DateTime,System.DateTime)">
+            <summary>
+            Determines whether the specified <see cref="T:System.DateTime"/> value is After then current value.
+            </summary>
+            <param name="current">The current value.</param>
+            <param name="toCompareWith">Value to compare with.</param>
+            <returns>
+            	<c>true</c> if the specified current is after; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.At(System.DateTime,System.Int32,System.Int32)">
+            <summary>
+            Returns the given <see cref="T:System.DateTime"/> with hour and minutes set At given values.
+            </summary>
+            <param name="current">The current <see cref="T:System.DateTime"/> to be changed.</param>
+            <param name="hour">The hour to set time to.</param>
+            <param name="minute">The minute to set time to.</param>
+            <returns><see cref="T:System.DateTime"/> with hour and minute set to given values.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.At(System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the given <see cref="T:System.DateTime"/> with hour and minutes and seconds set At given values.
+            </summary>
+            <param name="current">The current <see cref="T:System.DateTime"/> to be changed.</param>
+            <param name="hour">The hour to set time to.</param>
+            <param name="minute">The minute to set time to.</param>
+            <param name="second">The second to set time to.</param>
+            <returns><see cref="T:System.DateTime"/> with hour and minutes and seconds set to given values.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.At(System.DateTime,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Returns the given <see cref="T:System.DateTime"/> with hour and minutes and seconds and milliseconds set At given values.
+            </summary>
+            <param name="current">The current <see cref="T:System.DateTime"/> to be changed.</param>
+            <param name="hour">The hour to set time to.</param>
+            <param name="minute">The minute to set time to.</param>
+            <param name="second">The second to set time to.</param>
+            <param name="milliseconds">The milliseconds to set time to.</param>
+            <returns><see cref="T:System.DateTime"/> with hour and minutes and seconds set to given values.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.FirstDayOfMonth(System.DateTime)">
+            <summary>
+            Sets the day of the <see cref="T:System.DateTime"/> to the first day in that month.
+            </summary>
+            <param name="current">The current <see cref="T:System.DateTime"/> to be changed.</param>
+            <returns>given <see cref="T:System.DateTime"/> with the day part set to the first day in that month.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.LastDayOfMonth(System.DateTime)">
+            <summary>
+            Sets the day of the <see cref="T:System.DateTime"/> to the last day in that month.
+            </summary>
+            <param name="current">The current DateTime to be changed.</param>
+            <returns>given <see cref="T:System.DateTime"/> with the day part set to the last day in that month.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.AddBusinessDays(System.DateTime,System.Int32)">
+            <summary>
+            Adds the given number of business days to the <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="current">The date to be changed.</param>
+            <param name="days">Number of business days to be added.</param>
+            <returns>A <see cref="T:System.DateTime"/> increased by a given number of business days.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.SubtractBusinessDays(System.DateTime,System.Int32)">
+            <summary>
+            Subtracts the given number of business days to the <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="current">The date to be changed.</param>
+            <param name="days">Number of business days to be subtracted.</param>
+            <returns>A <see cref="T:System.DateTime"/> increased by a given number of business days.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.IsInFuture(System.DateTime)">
+            <summary>
+            Determine if a <see cref="T:System.DateTime"/> is in the future.
+            </summary>
+            <param name="dateTime">The date to be checked.</param>
+            <returns><c>true</c> if <paramref name="dateTime"/> is in the future; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.IsInPast(System.DateTime)">
+            <summary>
+            Determine if a <see cref="T:System.DateTime"/> is in the past.
+            </summary>
+            <param name="dateTime">The date to be checked.</param>
+            <returns><c>true</c> if <paramref name="dateTime"/> is in the past; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.FirstDayOfWeek(System.DateTime)">
+            <summary>
+            Returns a DateTime adjusted to the beginning of the week.
+            </summary>
+            <param name="dateTime">The DateTime to adjust</param>
+            <returns>A DateTime instance adjusted to the beginning of the current week</returns>
+            <remarks>the beginning of the week is controlled by the current Culture</remarks>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.StartOfWeek(System.DateTime)">
+            <summary>
+            Obsolete. This method has been renamed to FirstDayOfWeek to be more consistent with existing conventions.
+            </summary>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.FirstDayOfYear(System.DateTime)">
+            <summary>
+            Returns the first day of the year keeping the time component intact. Eg, 2011-02-04T06:40:20.005 => 2011-01-01T06:40:20.005
+            </summary>
+            <param name="current">The DateTime to adjust</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.LastDayOfWeek(System.DateTime)">
+            <summary>
+            Returns the last day of the week keeping the time component intact. Eg, 2011-12-24T06:40:20.005 => 2011-12-25T06:40:20.005
+            </summary>
+            <param name="current">The DateTime to adjust</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.LastDayOfYear(System.DateTime)">
+            <summary>
+            Returns the last day of the year keeping the time component intact. Eg, 2011-12-24T06:40:20.005 => 2011-12-31T06:40:20.005
+            </summary>
+            <param name="current">The DateTime to adjust</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.PreviousMonth(System.DateTime)">
+            <summary>
+            Returns the previous month keeping the time component intact. Eg, 2010-01-20T06:40:20.005 => 2009-12-20T06:40:20.005
+            If the previous month doesn't have that many days the last day of the previous month is used. Eg, 2009-03-31T06:40:20.005 => 2009-02-28T06:40:20.005
+            </summary>
+            <param name="current">The DateTime to adjust</param>
+            <returns></returns>
+        </member>
+        <member name="M:FluentDateTime.DateTimeExtensions.NextMonth(System.DateTime)">
+            <summary>
+            Returns the next month keeping the time component intact. Eg, 2012-12-05T06:40:20.005 => 2013-01-05T06:40:20.005
+            If the next month doesn't have that many days the last day of the next month is used. Eg, 2013-01-31T06:40:20.005 => 2013-02-28T06:40:20.005
+            </summary>
+            <param name="current">The DateTime to adjust</param>
+            <returns></returns>
+        </member>
+        <member name="T:FluentDateTime.NumberExtensions">
+            <summary>
+            Static class containing Fluent <see cref="T:System.DateTime"/> extension methods.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Years(System.Int32)">
+            <summary>
+            Generates <see cref="T:System.TimeSpan"/> value for given number of Years.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Months(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> value for given number of Months.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Weeks(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Weeks (number of weeks * 7).
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Weeks(System.Double)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Weeks (number of weeks * 7).
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Days(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Days.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Days(System.Double)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Days.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Hours(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Hours.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Hours(System.Double)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Hours.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Minutes(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Minutes.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Minutes(System.Double)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Minutes.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Seconds(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Seconds.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Seconds(System.Double)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Seconds.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Milliseconds(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Milliseconds.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Milliseconds(System.Double)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of Milliseconds.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Ticks(System.Int32)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of ticks.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.NumberExtensions.Ticks(System.Int64)">
+            <summary>
+            Returns <see cref="T:System.TimeSpan"/> for given number of ticks.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.Equals(FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Indicates whether the current object is equal to another object of the same type.
+            </summary>
+            <param name="other">An object to compare with this object.</param>
+            <returns>
+            <c>true</c> if the current object is equal to the other parameter; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.Add(FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Adds two fluentTimeSpan according operator +.
+            </summary>
+            <param name="number">The number to add to this fluentTimeSpan.</param>
+            <returns>The result of the addition operation.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.Subtract(FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Subtracts the number according -.
+            </summary>
+            <param name="fluentTimeSpan">The matrix to subtract from this fluentTimeSpan.</param>
+            <returns>The result of the subtraction.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.op_Addition(FluentDateTime.FluentTimeSpan,FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Overload of the operator + 
+            </summary>
+            <param name="left">The left hand fluentTimeSpan.</param>
+            <param name="right">The right hand fluentTimeSpan.</param>
+            <returns>The result of the addition.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.op_Subtraction(FluentDateTime.FluentTimeSpan,FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Overload of the operator - 
+            </summary>
+            <param name="left">The left hand fluentTimeSpan.</param>
+            <param name="right">The right hand fluentTimeSpan.</param>
+            <returns>The result of the subtraction.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.op_Equality(FluentDateTime.FluentTimeSpan,FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Equals operator.
+            </summary>
+            <param name="left">The left hand side.</param>
+            <param name="right">The right hand side.</param>
+            <returns><c>true</c> is <paramref name="left"/> is equal to <paramref name="right"/>; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.op_Inequality(FluentDateTime.FluentTimeSpan,FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Not Equals operator.
+            </summary>
+            <param name="left">The left hand side.</param>
+            <param name="right">The right hand side.</param>
+            <returns><c>true</c> is <paramref name="left"/> is not equal to <paramref name="right"/>; otherwise <c>false</c>.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.op_Implicit(FluentDateTime.FluentTimeSpan)~System.TimeSpan">
+            <summary>
+            Performs an explicit conversion from <see cref="T:FluentDateTime.FluentTimeSpan"/> to <see cref="P:FluentDateTime.FluentTimeSpan.TimeSpan"/>.
+            </summary>
+            <param name="fluentTimeSpan">The FluentTimeSpan.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.op_Implicit(System.TimeSpan)~FluentDateTime.FluentTimeSpan">
+            <summary>
+            Performs an implicit conversion from a <see cref="P:FluentDateTime.FluentTimeSpan.TimeSpan"/> to <see cref="T:FluentDateTime.FluentTimeSpan"/>.
+            </summary>
+            <param name="timeSpan">The <see cref="P:FluentDateTime.FluentTimeSpan.TimeSpan"/> that will be converted.</param>
+            <returns>The result of the conversion.</returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.Clone">
+            <summary>
+            Creates a new object that is a copy of the current instance.
+            </summary>
+            <returns>
+            A new object that is a copy of this instance.
+            </returns>
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.ToString">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.Equals(System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.GetHashCode">
+            <inheritdoc />
+        </member>
+        <member name="M:FluentDateTime.FluentTimeSpan.SubtractInternal(FluentDateTime.FluentTimeSpan,FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Internal subtraction function for the subtraction of fluentTimeSpans.
+            </summary>
+            <param name="left">The left hand side.</param>
+            <param name="right">The right hand side.</param>
+        </member>
+        <member name="T:FluentDateTime.TimeSpanExtensions">
+            <summary>
+            Static class containing Fluent <see cref="T:System.DateTime"/> extension methods.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Ago(System.TimeSpan)">
+            <summary>
+            Subtracts given <see cref="T:System.TimeSpan"/> from current date (<see cref="P:System.DateTime.Now"/>) and returns resulting <see cref="T:System.DateTime"/> in the past.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Ago(FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Subtracts given <see cref="T:FluentDateTime.FluentTimeSpan"/> from current date (<see cref="P:System.DateTime.Now"/>) and returns resulting <see cref="T:System.DateTime"/> in the past.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Ago(System.TimeSpan,System.DateTime)">
+            <summary>
+            Subtracts given <see cref="T:System.TimeSpan"/> from <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the past.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Ago(FluentDateTime.FluentTimeSpan,System.DateTime)">
+            <summary>
+            Subtracts given <see cref="T:System.TimeSpan"/> from <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the past.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Before(System.TimeSpan,System.DateTime)">
+            <summary>
+            Subtracts given <see cref="T:System.TimeSpan"/> from <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the past.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Before(FluentDateTime.FluentTimeSpan,System.DateTime)">
+            <summary>
+            Subtracts given <see cref="T:System.TimeSpan"/> from <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the past.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.FromNow(System.TimeSpan)">
+            <summary>
+            Adds given <see cref="T:System.TimeSpan"/> to current <see cref="P:System.DateTime.Now"/> and returns resulting <see cref="T:System.DateTime"/> in the future.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.FromNow(FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Adds given <see cref="T:System.TimeSpan"/> to current <see cref="P:System.DateTime.Now"/> and returns resulting <see cref="T:System.DateTime"/> in the future.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.From(System.TimeSpan,System.DateTime)">
+            <summary>
+            Adds given <see cref="T:System.TimeSpan"/> to supplied <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the future.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.From(FluentDateTime.FluentTimeSpan,System.DateTime)">
+            <summary>
+            Adds given <see cref="T:System.TimeSpan"/> to supplied <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the future.
+            </summary>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Since(System.TimeSpan,System.DateTime)">
+            <summary>
+            Adds given <see cref="T:System.TimeSpan"/> to supplied <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the future.
+            </summary>
+            <seealso cref="M:FluentDateTime.TimeSpanExtensions.From(System.TimeSpan,System.DateTime)"/>
+            <remarks>
+            Synonym of <see cref="M:FluentDateTime.TimeSpanExtensions.From(System.TimeSpan,System.DateTime)"/> method.
+            </remarks>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.Since(FluentDateTime.FluentTimeSpan,System.DateTime)">
+            <summary>
+            Adds given <see cref="T:System.TimeSpan"/> to supplied <paramref name="originalValue"/> <see cref="T:System.DateTime"/> and returns resulting <see cref="T:System.DateTime"/> in the future.
+            </summary>
+            <seealso cref="M:FluentDateTime.TimeSpanExtensions.From(FluentDateTime.FluentTimeSpan,System.DateTime)"/>
+            <remarks>
+            Synonym of <see cref="M:FluentDateTime.TimeSpanExtensions.From(FluentDateTime.FluentTimeSpan,System.DateTime)"/> method.
+            </remarks>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.ToDisplayString(FluentDateTime.FluentTimeSpan)">
+            <summary>
+            Convert a <see cref="T:System.TimeSpan"/> to a human readable string.
+            </summary>
+            <param name="timeSpan">The <see cref="T:System.TimeSpan"/> to convert</param>
+            <returns>A human readable string for <paramref name="timeSpan"/></returns>
+        </member>
+        <member name="M:FluentDateTime.TimeSpanExtensions.ToDisplayString(System.TimeSpan)">
+            <summary>
+            Convert a <see cref="T:System.TimeSpan"/> to a human readable string.
+            </summary>
+            <param name="timeSpan">The <see cref="T:System.TimeSpan"/> to convert</param>
+            <returns>A human readable string for <paramref name="timeSpan"/></returns>
+        </member>
+    </members>
+</doc>

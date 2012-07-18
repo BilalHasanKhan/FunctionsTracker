@@ -78,6 +78,17 @@ namespace TrackerRepositories.Repositories
 
         }
 
+        public int GetNumberOfAssignees(int ACRId)
+        {
+            return (from a in _context.ACR
+                    join m in _context.AssigneeMapping on a.ACRID equals m.ACRId
+                    where a.ACRID == 1
+                    select m.AssigneeMappingId
+                    ).Count();
+
+        }
+      
+
       
     }
 }
