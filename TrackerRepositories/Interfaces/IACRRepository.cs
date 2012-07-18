@@ -12,6 +12,8 @@ namespace TrackerRepositories.Interfaces
         IQueryable<ACR> All { get; }
         IQueryable<ACR> AllIncluding(params Expression<Func<ACR, object>>[] includeProperties);
         List<ACR> FindByAppId(int appId);
+        List<ACR> FindByStatusId(int statusId); // Added By Sadaf
+        IList<ACR> FindAll(); // Added By Sadaf
         ACR FindByACRName(string acrName);
         string GetACRStatus(int acrId);
         int GetNumberOfAssignees(int ACRId);
