@@ -61,5 +61,17 @@ namespace Tracker.Business.Tests
             };
 
         }
+        
+         // Added By Sadaf
+        public static List<ACR> ACRList()
+        {
+            return new List<ACR> 
+            {
+                 new ACR {ACRID=1, ACR_Name="ACR1", Summary="This is to test ACR1", ApplicationId=11, StatusId=1, ApprovedBy="Team1", AssigneeMapping=0, CreatedBy=1, CreatedDate=DateTime.Now, EndDate=DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)), isActive=true, RaisedBy=1,EstimatedEfforts=10.1},
+                new ACR {ACRID=2, ACR_Name="ACR2", Summary="This is to test ACR2", ApplicationId=12, StatusId=2, ApprovedBy="Team2", AssigneeMapping=0, CreatedBy=2, CreatedDate=DateTime.Now, EndDate=DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)), isActive=true, RaisedBy=2, EstimatedEfforts=10.2},
+                new ACR {ACRID=3, ACR_Name="ACR3", Summary="This is to test ACR3", ApplicationId=11, StatusId=2, ApprovedBy="Team3", AssigneeMapping=0, CreatedBy=2, CreatedDate=DateTime.Now, EndDate=DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)), isActive=true, RaisedBy=3, EstimatedEfforts=10.3},
+                new ACR {ACRID=4, ACR_Name="ACR4", Summary="This is to test ACR4", ApplicationId=14, StatusId=2, ApprovedBy="Team4", AssigneeMapping=0, CreatedBy=4, CreatedDate=DateTime.Now, EndDate=DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)), isActive=true, RaisedBy=4, EstimatedEfforts=10.4}
+            };
+        }
     }
 }
