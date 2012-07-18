@@ -87,6 +87,18 @@ namespace TrackerRepositories.Repositories
                     ).Count();
 
         }
+        
+        // Added By Sadaf
+        public List<ACR> FindByStatusId(int statusId)
+        {
+            return _context.ACR.Where(a => a.StatusId == statusId).ToList();
+        }
+
+
+        public IList<ACR> FindAll()
+        {
+            return _context.ACR.ToList();
+        }
       
 
       
