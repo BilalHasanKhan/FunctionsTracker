@@ -33,7 +33,7 @@ namespace Tracker.Business.Tests
                     _statusRepository  = new Mock<IStatusRepository>();
                     _acrRepository = new Mock<IACRRepository>();
 
-                    _acrRepository.Setup( a => a.GetACRStatus(It.IsAny<int>())).Returns((int i) => _status.Where(x => x.StatusId==i).Single().StatusName.ToString());
+                    _acrRepository.Setup( a => a.GetACRStatus(It.IsAny<int>())).Returns(() => _status.Where(x => x.StatusId==_acr.FirstOrDefault().StatusId).Single().StatusName.ToString());
                    
 
                     _statusRepository.Setup(s => s.All).Returns(_status.Where(i => i.IsActive==true).AsQueryable<StatusMaster>());
@@ -64,7 +64,7 @@ namespace Tracker.Business.Tests
         {
 
             string acrStatus = this._ACRRepository.GetACRStatus(1);
-            Assert.AreEqual("ACR Created", acrStatus);
+            Assert.AreEqual("ACR Scheduled", acrStatus);
 
         
 

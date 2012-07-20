@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using NUnit.Framework;
+using TrackerRepositories.Interfaces;
+using Moq;
+using TrackerModels.Models;
 
 namespace Tracker.Business.Tests
 {
@@ -97,7 +101,7 @@ namespace Tracker.Business.Tests
         public void CanSaveAnyChangesAfterInsert()
         {
             // Try to save after inserting a new ACR
-            ACR newACR = new ACR { ACR_Name = "ACR5", Summary = "This is to test ACR5", ApplicationId = 15, StatusId = 2, ApprovedBy = "Team4", AssigneeMapping = 0, CreatedBy = 4, CreatedDate = DateTime.Now, EndDate = DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)), isActive = true, RaisedBy = 4 };
+            ACR newACR = new ACR { ACR_Name = "ACR5", Summary = "This is to test ACR5", ApplicationId = 15, StatusId = 2, ApprovedBy = "Team4",  CreatedBy = 4, CreatedDate = DateTime.Now, EndDate = DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)), isActive = true, RaisedBy = 4 };
             int _intACRCount = this._acrRepository.FindAll().Count;
             Assert.AreEqual(4, _intACRCount); // Verify pre-insert count value
             this._acrRepository.InsertOrUpdate(newACR);

@@ -58,11 +58,13 @@ namespace Tracker.Business.Tests
                                           
              var endDate = _acrStatus.GetEndDate(StartDate,estimatedEfforts, acrStatus,numberOfPersonWorkingOnTask);
 
-             Assert.That(endDate.Day.Equals(23));
+             Assert.That(endDate.Day.Equals(24));
 
             
 
         }
+
+
 
        
 

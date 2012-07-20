@@ -8,7 +8,7 @@ using TrackerModels.Context;
 using TrackerModels.Models;
 using TrackerRepositories.Interfaces;
 
-namespace TrackerRepositories
+namespace TrackerRepositories.Repositories
 {
     public class StatusRepository : IStatusRepository
     {

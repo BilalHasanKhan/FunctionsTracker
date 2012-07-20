@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using FluentDateTime;
+using TrackerRepositories.Interfaces;
+
 
 
 namespace TrackerBusiness.ACR
 {
    public  class ACRStatus
     {
+    
        public DateTime GetEndDate(DateTime StartDate, double estimatedEfforts, string acrStatus, int numberOfAssignees)
        {
            if (acrStatus == "ACR Scheduled")
@@ -24,6 +27,8 @@ namespace TrackerBusiness.ACR
            }
 
        }
+
+      
 
     }
 }
