@@ -100,7 +100,25 @@ namespace TrackerRepositories.Repositories
             return _context.ACR.ToList();
         }
       
+       //Added By Monika
+       public string GetACRSummary(int acrid)
+        {
+            var acrSummary = from a in _context.ACR
+                             where a.ACRID == acrid
+                             select a.Summary;
 
+            return acrSummary.ToString();
+        }
+
+        public string ACRAssignedTo(int acrId)
+        {
+            var acrAssignedTo = from a in _context.ACR
+                                join b in _context.Users on a.AssigneeMapping equals b.UserID
+                                where a.ACRID == acrId
+                                select b.FirstName;
+
+            return acrAssignedTo.First().ToString();
+        }
       
     }
 }
