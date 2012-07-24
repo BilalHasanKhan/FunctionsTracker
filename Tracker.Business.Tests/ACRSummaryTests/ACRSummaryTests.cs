@@ -20,6 +20,7 @@ namespace Tracker.Business.Tests.ACRSummaryTests
         private IList<StatusMaster> _acrStatus;
         private IList<ACR> _acrDetails;
         private IList<Users> _UsersAssignedToACR;
+        private IList<AssigneeMapping> _assignees;
         private IACRRepository _ACRRepository;
         private IACRRepository _ACRStatusRepository;
         private IACRRepository _ACRAssignedToRepository;
@@ -31,10 +32,11 @@ namespace Tracker.Business.Tests.ACRSummaryTests
             _acrDetails = FakeDatabase.AcrList();
             _acrStatus = FakeDatabase.StatusList();
             _UsersAssignedToACR = FakeDatabase.UserList();
+            _assignees = FakeDatabase.GetAssignees();
             
             _acrSumRepository.Setup(a => a.GetACRSummary(It.IsAny<int>())).Returns((int i) => _acrDetails.Where(x => x.ACRID == i).Single().Summary.ToString());
             _acrStatusRepository.Setup(a => a.GetACRStatus(It.IsAny<int>())).Returns((int i) => _acrStatus.Where(x => x.StatusId == _acrDetails.FirstOrDefault().StatusId).Single().StatusName.ToString());
-            _acrAssignedToRepository.Setup(a => a.ACRAssignedTo(It.IsAny<int>())).Returns(() => _UsersAssignedToACR.Single(x => x.UserID == _acrDetails.FirstOrDefault().AssigneeMapping).FirstName.ToString());
+            _acrAssignedToRepository.Setup(a => a.ACRAssignedTo(It.IsAny<int>())).Returns(() => _assignees.Where(a => a.UserId==_UsersAssignedToACR.FirstOrDefault().UserID).Select(s => s.User.FirstName +" "+ s.User.LastName).ToList<string>());
             this._ACRRepository = _acrSumRepository.Object;
             this._ACRStatusRepository = _acrStatusRepository.Object;
             this._ACRAssignedToRepository = _acrAssignedToRepository.Object;
@@ -54,15 +56,16 @@ namespace Tracker.Business.Tests.ACRSummaryTests
         public void check_Correct_Status_Value()
         {
             string ACRStatus = this._ACRStatusRepository.GetACRStatus(1);
-            Assert.AreEqual("ACR Submitted", ACRStatus);
+            Assert.AreEqual("ACR Scheduled", ACRStatus);
 
         }
 
         [Test]
         public void Check_ACR_Assigned_To_CorrectUser()
         {
-            string ACRAssignedTo = this._ACRAssignedToRepository.ACRAssignedTo(2);
-                Assert.AreEqual("Monika", ACRAssignedTo);
+            List<string> ACRAssignedTo = this._ACRAssignedToRepository.ACRAssignedTo(2);
+                Assert.AreEqual(1,ACRAssignedTo.Count);
+                Assert.AreEqual("Monika Mathur", ACRAssignedTo.First().ToString());
         }
 
 

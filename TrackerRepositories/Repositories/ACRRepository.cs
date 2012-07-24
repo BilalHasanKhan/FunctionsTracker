@@ -110,14 +110,14 @@ namespace TrackerRepositories.Repositories
             return acrSummary.ToString();
         }
 
-        public string ACRAssignedTo(int acrId)
+        public List<string> ACRAssignedTo(int acrId)
         {
-            var acrAssignedTo = from a in _context.ACR
-                                join b in _context.Users on a.AssigneeMapping equals b.UserID
-                                where a.ACRID == acrId
-                                select b.FirstName;
+            var acrAssignedTo = from a in _context.AssigneeMapping
+                                join b in _context.Users on a.UserId equals b.UserID
+                                where a.ACRId == acrId
+                                select b.FirstName +" "+ b.LastName;
 
-            return acrAssignedTo.First().ToString();
+            return acrAssignedTo.ToList<string>();
         }
         //Added By Monika
       

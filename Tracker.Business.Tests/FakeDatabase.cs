@@ -53,10 +53,10 @@ namespace Tracker.Business.Tests
 
             return new List<AssigneeMapping>
             {
-                new AssigneeMapping {AssigneeMappingId=1,ACRId=1,UserId=1},
-                new AssigneeMapping {AssigneeMappingId=2,ACRId=1,UserId=2},
-                new AssigneeMapping {AssigneeMappingId=3,ACRId=1,UserId=3},
-                new AssigneeMapping {AssigneeMappingId=4,ACRId=1,UserId=4}
+                new AssigneeMapping {AssigneeMappingId=1,ACRId=1,UserId=1,User=UserList().FirstOrDefault()},
+                new AssigneeMapping {AssigneeMappingId=2,ACRId=2,UserId=2},
+                new AssigneeMapping {AssigneeMappingId=3,ACRId=2,UserId=3},
+                new AssigneeMapping {AssigneeMappingId=4,ACRId=2,UserId=4}
 
             };
 
