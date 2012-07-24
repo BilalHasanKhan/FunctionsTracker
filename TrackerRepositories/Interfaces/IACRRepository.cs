@@ -14,6 +14,8 @@ namespace TrackerRepositories.Interfaces
         List<ACR> FindByAppId(int appId);
         List<ACR> FindByStatusId(int statusId); // Added By Sadaf
         IList<ACR> FindAll(); // Added By Sadaf
+        string GetACRSummary(int acrId); //Added By Monika
+        string ACRAssignedTo(int acrID); //Added By Monika
         ACR FindByACRName(string acrName);
         string GetACRStatus(int acrId);
         int GetNumberOfAssignees(int ACRId);
