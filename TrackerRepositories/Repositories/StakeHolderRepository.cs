@@ -9,7 +9,7 @@ using System.Data;
 
 namespace TrackerRepositories.Repositories
 {
-    class StakeHolderRepository : IStakeHolderRepository
+    public class StakeHolderRepository : IStakeHolderRepository
     {
         TrackerContext _context = new TrackerContext();
 

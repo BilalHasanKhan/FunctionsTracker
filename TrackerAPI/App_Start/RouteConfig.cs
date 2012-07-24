@@ -16,7 +16,7 @@ namespace FunctionsTrackerAPI
 
             routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "Tracker/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
 

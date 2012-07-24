@@ -10,7 +10,7 @@ using System.Data;
 using TrackerRepositories.Interfaces;
 
 
-namespace TrackerRepositories
+namespace TrackerRepositories.Repositories
 {
     public class ApplicationsRepository : IApplicationsRepository
     {       

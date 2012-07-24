@@ -9,7 +9,7 @@ using TrackerModels.Context;
 using TrackerModels.Models;
 
 
-namespace TrackerRepositories
+namespace TrackerRepositories.Repositories
 {
    
         public class UserRepository : IUsersReporsitory
