@@ -52,6 +52,7 @@
     <Compile Include="ACRStatusTests\ACRStatusTests.cs" />
     <Compile Include="ACRStatusTests\CalculateACREndDate.cs" />
     <Compile Include="ACRLandingPageBusinessTests\ACRLandingPageTests.cs" />
+    <Compile Include="ACRSummaryTests\ACRSummaryTests.cs" />
     <Compile Include="FakeDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

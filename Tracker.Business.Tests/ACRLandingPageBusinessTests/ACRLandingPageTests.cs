@@ -3,15 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-<<<<<<< HEAD
 using TrackerRepositories.Interfaces;
 using Moq;
 using TrackerModels.Models;
-=======
-using TrackerModels.Models;
-using Moq;
-using TrackerRepositories.Interfaces;
->>>>>>> origin/master
+
+
 
 namespace Tracker.Business.Tests
 {
