@@ -73,5 +73,16 @@ namespace Tracker.Business.Tests
                 new ACR {ACRID=4, ACR_Name="ACR4", Summary="This is to test ACR4", ApplicationId=14, StatusId=2, ApprovedBy="Team4",  CreatedBy=4, CreatedDate=DateTime.Now, EndDate=DateTime.UtcNow.Add(TimeSpan.FromDays(30.00)), isActive=true, RaisedBy=4, EstimatedEfforts=10.4}
             };
         }
+        
+        //Added By Monika
+        public static List<Users> UserList()
+        {
+            return new List<Users>
+            {
+           
+                new Users { UserID = 1, FirstName="Monika", LastName="Mathur", BPEmailID="monika.mathur@bp.com",  Contact1=0000, CreatedDate=DateTime.Now, NTID="",  EmpID=0, SoftwareMappingID=0, AssetID=0, Contact2=0000000000000, CreatedBy=" ", IsActive=true, ModifiedBy=" ", ModifiedDate=DateTime.Now }
+            };
+        }
+
     }
 }
