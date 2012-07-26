@@ -18,7 +18,7 @@ namespace TrackerRepositories.Repositories
 
         StakeHolderMapping GetByACRID(int StakeholderID)
         {
-            return _context.StakeHolderMapping.SingleOrDefault(c => c.StakeholderID == StakeholderID);
+            return _context.StakeHolderMapping.SingleOrDefault(c => c.StakeHolderID == StakeholderID);
 
         }
 

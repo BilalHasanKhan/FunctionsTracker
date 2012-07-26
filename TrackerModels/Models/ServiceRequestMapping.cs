@@ -8,6 +8,7 @@ namespace TrackerModels.Models
 {
    public class ServiceRequestMapping
     {
+       [Key]
        public int RequestMappingId { get; set; }
        [MaxLength(50)]
        public string RemedyNumber { get; set; }

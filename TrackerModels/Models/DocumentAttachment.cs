@@ -22,8 +22,10 @@ namespace TrackerModels.Models
 
         [StringLength(50)]
         public string DocAttachPath { get; set; }
+
+        public int ACRId { get; set; }
         
-        [ForeignKey("ACRID")]
+        [ForeignKey("ACRId")]
         public virtual ACR acr { get; set; }
 
     }

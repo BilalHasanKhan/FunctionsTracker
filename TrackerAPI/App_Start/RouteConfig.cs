@@ -20,7 +20,12 @@ namespace FunctionsTrackerAPI
                 defaults: new { id = RouteParameter.Optional }
             );
 
-            routes.MapRoute(
+            routes.MapHttpRoute(
+             name: "ACR",
+             routeTemplate: "ACR/{action}/{applicationId}",
+             defaults: new {controller="ACR", application=""});
+
+                routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

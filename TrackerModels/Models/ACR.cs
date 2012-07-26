@@ -52,5 +52,7 @@ namespace TrackerModels.Models
         
         public virtual List<AssigneeMapping> AssigneeMappings { get; set; }
 
+        public virtual List<StakeHolderMapping> StakeHolderMappings { get; set; }
+
     }
 }

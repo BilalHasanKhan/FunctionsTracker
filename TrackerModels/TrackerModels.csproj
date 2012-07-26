@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ACR.cs" />
     <Compile Include="Models\Applications.cs" />
     <Compile Include="Models\AssetDetails.cs" />

@@ -32,11 +32,15 @@ namespace TrackerRepositories.Repositories
 
         public List<ACR> FindByAppId(int appId)
         {
+           
+           _context.Configuration.ProxyCreationEnabled = false;
+            
            return _context.ACR.Where(a => a.ApplicationId==appId).ToList();
         }
 
         public ACR FindByACRName(string acrName)
         {
+            _context.Configuration.ProxyCreationEnabled = false;
             return _context.ACR.Single(a => a.ACR_Name==acrName);
         }
 

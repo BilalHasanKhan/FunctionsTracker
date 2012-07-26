@@ -24,39 +24,36 @@ namespace TrackerModels.Models
 
            
             public int SLALevel { get; set; }    
-            public int ServerId { get; set; }
             public int URLId { get; set; }
-            public int StakeHolderMappingId { get; set; }          
+           // public int StakeHolderMappingId { get; set; }          
             public int OrgId { get; set; }
-            public int UserId { get; set; }
+           // public int UserId { get; set; }
            
             
-            public virtual ICollection<StakeHoldersDetails> _StakeHoldersDetails { get; set; }
-            public virtual ICollection<Users> _Users { get; set; }
+            public virtual ICollection<StakeHoldersDetails> StakeHoldersDetails { get; set; }
+            public virtual ICollection<Users> Users { get; set; }
 
 
             public Applications()
             {
                 
-                _StakeHoldersDetails = new HashSet<StakeHoldersDetails>();
-                _Users = new HashSet<Users>();
+                StakeHoldersDetails = new HashSet<StakeHoldersDetails>();
+                Users = new HashSet<Users>();
             }
 
 
-            [ForeignKey("ServerId")]
-            public virtual ServerDetails serverDetails { get; set; }
 
             [ForeignKey("URLId")]
             public virtual URLDetails urlDetails { get; set; }
 
-            [ForeignKey("StakeHolderMappingId")]
-            public virtual StakeHoldersDetails stakeHoldersDetails { get; set; }
+            //[ForeignKey("StakeHolderMappingId")]
+            //public virtual StakeHoldersDetails stakeHoldersDetails { get; set; }
 
             [ForeignKey("OrgId")]
             public virtual OrgDetails orgDetails { get; set; }
 
-            [ForeignKey("UserId")]
-            public virtual Users users { get; set; }
+            //[ForeignKey("UserId")]
+            //public virtual Users users { get; set; }
        
     }
 }

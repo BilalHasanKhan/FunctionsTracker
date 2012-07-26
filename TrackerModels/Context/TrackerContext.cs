@@ -10,6 +10,8 @@ namespace TrackerModels.Context
 {
    public class TrackerContext : DbContext 
     {
+        public TrackerContext() : base("Tracker") { }
+
         public DbSet<ACR> ACR { get; set; }
         public DbSet<Applications> Applications { get; set; }
         public DbSet<AssetDetails> AssetDetails { get; set; }
@@ -29,5 +31,11 @@ namespace TrackerModels.Context
         public DbSet<ServiceRequestMapping> ServiceRequestMapping { get; set; }
         public DbSet<ServerAppMapping> ServerAppMapping { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<ACR>().HasMany(a => a.AssigneeMappings).WithRequired(a => a.Acr).WillCascadeOnDelete(false);
+            modelBuilder.Entity<StakeHoldersDetails>().HasMany(s => s.StakeHolderMappings).WithRequired(s => s.StakeHoldersDetails).WillCascadeOnDelete(false);
+            
+        }
     }
 }

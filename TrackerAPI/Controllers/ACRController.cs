@@ -23,23 +23,61 @@ namespace FunctionsTrackerAPI.Controllers
     
         public IList<ACR> GetAcrByApplicationId(int applicationId)
         {
-            return _acrRepository.FindByAppId(applicationId);
+            try
+            {
+                return _acrRepository.FindByAppId(applicationId);
+            }
+
+            catch (HttpResponseException h)
+            {
+                var messgae = h.Message;
+                return new List<ACR>();
+            }
         }
 
-       
-        public ACR Get(string acrName)
+           
+        public ACR GetACRByName(string acrName)
         {
             return _acrRepository.FindByACRName(acrName);
         }
 
-        
-        public void Post(string value)
+        [HttpPost]
+        public  HttpResponseMessage PostNewACR(ACR acr)
         {
-        }
+
+            try
+                {
+
+                _acrRepository.InsertOrUpdate(acr);
+                _acrRepository.Save();
+                }
+
+                catch(HttpResponseException ex)
+                {
+
+                    return Request.CreateResponse(HttpStatusCode.Conflict,acr);
+                }
+
+            
+            var response = Request.CreateResponse<ACR>(HttpStatusCode.Created, acr);
+            string uri = "/Tracker/ACR?acrName="+acr.ACR_Name;
+            response.Headers.Location = new Uri(Request.RequestUri,uri);
+
+            return response;
+    }
 
         
-        public void Put(int id, string value)
+        public HttpResponseMessage Put(int Id, ACR acr)
         {
+            _acrRepository.InsertOrUpdate(acr);
+            _acrRepository.Save();
+
+            var response = Request.CreateResponse<ACR>(HttpStatusCode.Accepted, acr);
+            string uri = "/Tracker/ACR?acrName=" + acr.ACR_Name;
+            response.Headers.Location = new Uri(Request.RequestUri, uri);
+
+            return response;
+
         }
 
         

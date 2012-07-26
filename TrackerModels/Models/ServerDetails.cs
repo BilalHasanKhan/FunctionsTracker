@@ -18,5 +18,7 @@ namespace TrackerModels.Models
 
         public int ServerTypeId { get; set; }
 
+        public virtual List<ServerAppMapping> serverAppMapping { get; set; }
+
     }
 }
